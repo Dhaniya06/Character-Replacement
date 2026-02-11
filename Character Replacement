@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String c1 = sc.nextLine();
+        String c2 = sc.nextLine();
+
+        // Validate single alphabet characters
+        if (c1.length() != 1 || c2.length() != 1 ||
+            !Character.isLetter(c1.charAt(0)) ||
+            !Character.isLetter(c2.charAt(0))) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        char oldChar = c1.charAt(0);
+        char newChar = c2.charAt(0);
+
+        String result = s.replace(oldChar, newChar);
+        System.out.println(result);
+    }
+}
